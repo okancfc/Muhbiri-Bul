@@ -17,18 +17,18 @@ export default function Home() {
 
   // Yeni oyuncu ekleme
   const addPlayer = () => {
-    if (players.length < 6) {
+    if (players.length < 10) {
       setPlayers([...players, ""]);
     } else {
-      alert("En fazla 6 oyuncu ekleyebilirsiniz.");
+      alert("En fazla 10 oyuncu ekleyebilirsiniz.");
     }
   };
 
   // Oyunu başlat
   const startGame = () => {
     const validPlayers = players.filter(name => name.trim() !== "");
-    if (validPlayers.length < 2) {
-      alert("En az 2 oyuncu adı girin!");
+    if (validPlayers.length < 3) {
+      alert("En az 3 oyuncu adı girin!");
       return;
     }
     router.push(`/game?players=${encodeURIComponent(validPlayers.join(","))}`);
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Yeni Oyuncu Ekleme Butonu */}
-        {players.length < 6 && (
+        {players.length < 10 && (
           <button
             onClick={addPlayer}
             className="mr-1 mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition"

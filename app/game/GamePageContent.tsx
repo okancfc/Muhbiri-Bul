@@ -129,7 +129,7 @@ export default function GamePageContent() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col overflow-y-auto items-center justify-center min-h-screen bg-gray-900 text-white">
       {/* Konum Listesi Butonu */}
       <div className="absolute top-4 right-4">
         <button 
@@ -165,7 +165,7 @@ export default function GamePageContent() {
               <div className={`
                 absolute z-10 top-full mt-2 left-1/2 transform -translate-x-1/2 
                 bg-white text-black p-3 rounded-lg shadow-lg 
-                text-center w-60 
+                text-center w-60
                 ${player.isInformant ? 'border-2 border-red-500' : ''}
               `}>
                 <p className="text-lg font-semibold">Konumunuz:</p>
